@@ -10,10 +10,15 @@
 
 <div class="container">
   <div class="row">
-    <div class="span4">
+    <div class="span12 headblock">
+      <h1>RedMoi</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span3 sideblock">
       <%= yield(:side) %>
     </div>
-    <div class="span8">
+    <div class="span8 contentblock">
       <%= yield %>
     </div>
   </div>
