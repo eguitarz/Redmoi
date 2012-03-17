@@ -7,7 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
+Format.delete_all
 format = Format.create([ :name => 'HTML', :parser => 'html_std' ])
 
- admin = User.create! :email => 'admin@example.com', :password => 'admin123', :password_confirmation => 'admin123'
- admin.save
+User.delete_all
+admin = User.create! :email => 'admin@example.com', :password => 'admin123', :password_confirmation => 'admin123'
