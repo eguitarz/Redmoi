@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem "ruby-readability", :require => 'readability'
 
+gem 'devise'
 gem 'simple_form'
 
 # Gems used only for assets and not required
