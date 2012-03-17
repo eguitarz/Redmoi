@@ -9,4 +9,5 @@
 
 format = Format.create([ :name => 'HTML', :parser => 'html_std' ])
 
-gather = Gather.create( [ :user_id => nil, :title => 'Test page', :url => 'http://google.com' ])
+ admin = User.create! :email => 'admin@example.com', :password => 'admin123', :password_confirmation => 'admin123'
+ admin.save
