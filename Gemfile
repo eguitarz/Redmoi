@@ -7,8 +7,10 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 
-gem "twitter-bootstrap-rails"
+gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem "ruby-readability", :require => 'readability'
+
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
