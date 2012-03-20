@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120317111339) do
+ActiveRecord::Schema.define(:version => 20120317113831) do
 
   create_table "formats", :force => true do |t|
     t.string   "name"
@@ -20,19 +20,8 @@ ActiveRecord::Schema.define(:version => 20120317111339) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "gathers", :force => true do |t|
-    t.integer  "user_id",          :limit => 255
-    t.string   "title"
-    t.text     "content"
-    t.text     "description"
-    t.string   "keyword"
-    t.string   "url"
-    t.datetime "gather_time"
-    t.integer  "gather_format_id"
-    t.boolean  "visibility"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-  end
+# Could not dump table "gathers" because of following StandardError
+#   Unknown type 'User' for column 'user'
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
