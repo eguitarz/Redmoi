@@ -1,0 +1,5 @@
+<ul>
+<% @gathers.each do |g| %>
+	<li><%= link_to g.title, gather_path(g) %></li>
+<% end %>
+</ul>

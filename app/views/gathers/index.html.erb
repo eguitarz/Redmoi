@@ -1,3 +1,7 @@
 <% @gathers.each do |g|  %>
-	<%= link_to g.title, gather_path(g) %> <br>
+  <%= link_to g.title, gather_path(g) %> <br>
+<% end %>
+
+<% content_for(:side) do %>
+  <%= render :partial=>"/menu" %>
 <% end %>

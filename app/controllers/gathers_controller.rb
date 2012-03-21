@@ -6,6 +6,10 @@ class GathersController < ApplicationController
     @gathers = Gather.all
   end
   
+  def menu
+    @gathers = Gather.all
+  end
+  
   def show
 
   end
