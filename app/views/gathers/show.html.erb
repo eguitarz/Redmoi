@@ -1,3 +1,7 @@
 <h1> <%= @gather.title %> </h1>
 
 <p> <%= @gather.content %> </p>
+
+<% content_for(:side) do %>
+  <%= render :partial=>"/menu" %>
+<% end %>

@@ -11,7 +11,7 @@ class GathersController < ApplicationController
   end
   
   def show
-
+    @gathers = Gather.all # to display menu
   end
   
   def new
