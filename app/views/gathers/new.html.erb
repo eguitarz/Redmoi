@@ -1,0 +1,10 @@
+<%= form_for @gather, :url => gathers_path do |f| %>
+	<%= f.label :url, "url"%>
+	<%= f.text_field :url %>
+	
+	<%= f.submit "Create" %>
+<% end %>
+
+<% content_for(:side) do %>
+  <%= render :partial=>"/menu" %>
+<% end %>
