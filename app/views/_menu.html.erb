@@ -1,3 +1,5 @@
+<% if current_user %>
+
 <p><%= link_to 'NEW', new_gather_path %></p>
 <ul>
 <% @gathers.each do |g| %>
@@ -5,3 +7,5 @@
   <%= button_to 'DEL', gather_path(g), :method => :delete %></li>
 <% end %>
 </ul>
+
+<% end %>
