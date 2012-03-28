@@ -1,4 +1,13 @@
 // custom css for Remoi
+$default-bg-color: #ffffff;
+
+#user_nav {
+  color:#ffffff;
+  padding-right: 20px;
+  margin-right: -20px;
+  background-color: #000000;
+  text-align: right;
+}
 
 .headblock {
   padding : 5px 10px;
@@ -10,10 +19,21 @@
   margin : 0;
 }
 .sideblock {
-  border-right : 1px solid #000000;
+  border-right : 1px solid #afafaf;
+  border-bottom : 1px solid #afafaf;
   padding : 10px 5px;
   background-color : #dedede;
+  min-height: 600px;
+  box-shadow: 3px 0px 5px #888;
 }
 .contentblock {
   padding : 10px 5px;
+}
+.footer {
+  background-color: $default-bg-color;
+  padding: 5px 10px;
+  border-radius: 0 10px 0px 10px;
+  min-height: 100px;
+  text-align: center;
+  border: 1px solid #afafaf;
 }
