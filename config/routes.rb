@@ -1,7 +1,8 @@
 Redmoi::Application.routes.draw do
   devise_for :users
+  match '/menu' => 'gathers#menu'
   resources :gathers
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
