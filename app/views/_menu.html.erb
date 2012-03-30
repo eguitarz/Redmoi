@@ -1,10 +1,11 @@
 <% if current_user %>
 
 <p><%= link_to 'NEW', new_gather_path %></p>
+<p id="menu-edit"><%= link_to_function 'EDIT', 'test()' %></p>
 <ul>
 <% @gathers.each do |g| %>
   <li><%= link_to g.title, gather_path(g) %>
-  <%= button_to 'DEL', gather_path(g), :method => :delete %></li>
+  <span class="operation"><%= button_to 'DEL', gather_path(g), :method => :delete %></li></span>
 <% end %>
 </ul>
 

@@ -1,5 +1,10 @@
 // custom css for Remoi
 $default-bg-color: #ffffff;
+$header-link-color: #ffffff;
+
+@mixin header-link {
+  color: $header-link-color;
+}
 
 #user_nav {
   color:#ffffff;
@@ -7,6 +12,17 @@ $default-bg-color: #ffffff;
   margin-right: -20px;
   background-color: #000000;
   text-align: right;
+
+  a {
+    @include header_link;
+    text-decoration: underline;
+  }
+  a:href {
+    @include header_link;
+  }
+  a:visited {
+    @include header_link;
+  }
 }
 
 .headblock {
@@ -14,9 +30,18 @@ $default-bg-color: #ffffff;
   background-color : #000000;
   color : #ffffff;
   border-radius : 0 0 20px 0;
-}
-.headblock h1 {
-  margin : 0;
+  h1 {
+    margin: 0;
+  }
+  a {
+    @include header_link;
+  }
+  a:href {
+    @include header_link;
+  }
+  a:visited {
+    @include header_link;
+  }
 }
 .sideblock {
   border-right : 1px solid #afafaf;
@@ -36,4 +61,8 @@ $default-bg-color: #ffffff;
   min-height: 100px;
   text-align: center;
   border: 1px solid #afafaf;
+}
+
+.operation {
+  display: none;
 }
