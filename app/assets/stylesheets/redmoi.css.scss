@@ -1,6 +1,7 @@
 // custom css for Remoi
 $default-bg-color: #ffffff;
 $header-link-color: #ffffff;
+$grey-border: 1px solid #afafaf;
 
 body {
   background: url(/stripe_red.png);
@@ -10,9 +11,10 @@ body {
   color: $header-link-color;
 }
 
-li {
+.menu-li {
+  border-bottom: $grey-border;
   list-style-type: none;
-  margin: 20px 5px;
+  margin: 20px 5px 5px -20px;
 }
 
 #user_nav {
@@ -53,8 +55,8 @@ li {
   }
 }
 .sideblock {
-  border-right : 1px solid #afafaf;
-  border-bottom : 1px solid #afafaf;
+  border-right : $grey-border;
+  border-bottom : $grey-border;
   padding : 10px 5px;
   background-color : #dedede;
   min-height: 600px;
@@ -62,7 +64,7 @@ li {
 }
 .container {
   border-left : 1px solid #000000;
-  border-right : 1px solid #afafaf;
+  border-right : $grey-border;
   background: #ffffff;
   box-shadow: 3px 0px 5px #888;
 }
