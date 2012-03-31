@@ -56,7 +56,7 @@ class GathersController < ApplicationController
   end
 
   def get_gathers
-    @gathers = Gather.all
+    @gathers = Gather.find(:all, :order => "updated_at DESC")
   end
 
 end
