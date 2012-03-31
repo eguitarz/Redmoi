@@ -2,6 +2,10 @@
 $default-bg-color: #ffffff;
 $header-link-color: #ffffff;
 
+body {
+  background: url(/stripe_red.png);
+}
+
 @mixin header-link {
   color: $header-link-color;
 }
@@ -56,16 +60,23 @@ li {
   min-height: 600px;
   box-shadow: 3px 0px 5px #888;
 }
+.container {
+  border-left : 1px solid #000000;
+  border-right : 1px solid #afafaf;
+  background: #ffffff;
+  box-shadow: 3px 0px 5px #888;
+}
 .contentblock {
   padding : 10px 5px;
 }
 .footer {
-  background-color: $default-bg-color;
-  padding: 5px 10px;
-  border-radius: 0 10px 0px 10px;
+  background-color: #dfdfdf;
+  padding: 5px 0;
   min-height: 100px;
   text-align: center;
-  border: 1px solid #afafaf;
+  border-top: 1px dashed #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #afafaf;
 }
 
 .menu-del {
