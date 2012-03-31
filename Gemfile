@@ -5,8 +5,6 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem "ruby-readability", :require => 'readability'
 
@@ -29,6 +27,14 @@ gem 'jquery-rails'
 
 group :development do
   gem 'rails_best_practices'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
