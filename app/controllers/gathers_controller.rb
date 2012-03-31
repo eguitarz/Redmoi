@@ -28,7 +28,7 @@ class GathersController < ApplicationController
     text = open(@gather.url).read
     @gather.title = Readability::Document.new(text).title
     @gather.content = Readability::Document.new(text,
-      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span'],
+      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
       :attributes => ['src', 'href']).content
 
     @gather.user = current_user
