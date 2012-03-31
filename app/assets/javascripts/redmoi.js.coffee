@@ -1,10 +1,12 @@
 @hide = false
 @test = () ->
   if @hide
-    $('.operation').css 'display' : 'none'
+    $('.menu-del').css 'display' : 'none'
     $('#menu-edit').find('a').text 'EDIT'
+    $('.menu-del').removeClass 'close'
     @hide = false
   else
-    $('.operation').css 'display' : 'block'
+    $('.menu-del').css 'display' : 'inline'
+    $('.menu-del').addClass 'close'
     $('#menu-edit').find('a').text 'CANCEL'
     @hide = true

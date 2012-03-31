@@ -4,8 +4,10 @@
 <p id="menu-edit"><%= link_to_function 'EDIT', 'test()' %></p>
 <ul>
 <% @gathers.each do |g| %>
-  <li><%= link_to g.title, gather_path(g) %>
-  <span class="operation"><%= button_to 'DEL', gather_path(g), :method => :delete %></li></span>
+  <li>
+    <span class="menu-del"><%= link_to 'x', gather_path(g), :method => :delete %></span>
+    <span class="gather"><%= link_to g.title, gather_path(g) %></span>
+  </li>
 <% end %>
 </ul>
 

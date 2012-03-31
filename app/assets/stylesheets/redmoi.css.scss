@@ -6,6 +6,11 @@ $header-link-color: #ffffff;
   color: $header-link-color;
 }
 
+li {
+  list-style-type: none;
+  margin: 20px 5px;
+}
+
 #user_nav {
   color:#ffffff;
   padding-right: 20px;
@@ -63,6 +68,10 @@ $header-link-color: #ffffff;
   border: 1px solid #afafaf;
 }
 
-.operation {
+.menu-del {
+  a {
+   color: #000000;
+  }
+  margin: -5px 0 15px 15px;
   display: none;
 }
