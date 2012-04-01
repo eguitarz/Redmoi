@@ -25,7 +25,12 @@ class GathersController < ApplicationController
 
   def create
     @gather = Gather.new(params[:gather])
-    text = open(@gather.url).read
+    begin
+      text = open(@gather.url).read
+    rescue => e
+      redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
+      return
+    end
     @gather.title = Readability::Document.new(text).title
     @gather.content = Readability::Document.new(text,
       :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
