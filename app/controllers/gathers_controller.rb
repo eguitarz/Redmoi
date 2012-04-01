@@ -65,7 +65,10 @@ class GathersController < ApplicationController
   end
 
   def get_gathers
-    @gathers = Gather.find(:all, :order => "updated_at DESC")
+    unless current_user.nil?
+      @@log.debug "current user id: " + current_user.id.to_s()
+      @gathers = Gather.where(:user_id => current_user.id).order("updated_at DESC")
+    end
   end
 
 end
