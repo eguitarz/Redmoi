@@ -25,9 +25,12 @@ class GathersController < ApplicationController
 
   def create
     @gather = Gather.new(params[:gather])
+    text = nil
     begin
       text = open(@gather.url).read
     rescue => e
+      log = Logger.new(STDOUT)
+      log.debug e
       redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
       return
     end
