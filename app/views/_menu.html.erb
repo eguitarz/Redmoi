@@ -10,13 +10,15 @@
     <%= link_to_function 'EDIT', 'test()' %>
   </span>
 </p>
-<ul class="menu-ul">
-<% @gathers.each do |g| %>
-  <li class="menu-li">
-    <span class="menu-del"><%= link_to 'x', gather_path(g), :method => :delete %></span>
-    <span class="gather"><%= link_to g.title, gather_path(g) %></span>
-  </li>
-<% end %>
-</ul>
 
+  <% unless @gathers.nil? %>
+    <ul class="menu-ul">
+    <% @gathers.each do |g| %>
+      <li class="menu-li">
+        <span class="menu-del"><%= link_to 'x', gather_path(g), :method => :delete %></span>
+        <span class="gather"><%= link_to g.title, gather_path(g) %></span>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
 <% end %>

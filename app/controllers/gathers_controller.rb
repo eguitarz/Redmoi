@@ -7,6 +7,8 @@ class GathersController < ApplicationController
   # Gathers Controller require verified users
   before_filter :authenticate_user!
 
+  @@log = Logger.new(STDOUT)
+
   def index
 
   end
@@ -29,8 +31,7 @@ class GathersController < ApplicationController
     begin
       text = open(@gather.url).read
     rescue => e
-      log = Logger.new(STDOUT)
-      log.debug e
+      @@log.debug e
       redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
       return
     end
@@ -64,7 +65,10 @@ class GathersController < ApplicationController
   end
 
   def get_gathers
-    @gathers = Gather.find(:all, :order => "updated_at DESC")
+    unless current_user.nil?
+      @@log.debug "current user id: " + current_user.id.to_s()
+      @gathers = Gather.where(:user_id => current_user.id).order("updated_at DESC")
+    end
   end
 
 end
