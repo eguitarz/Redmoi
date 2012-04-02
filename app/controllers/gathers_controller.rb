@@ -26,24 +26,16 @@ class GathersController < ApplicationController
   end
 
   def create
+    @@log.debug "Action => create"
     @gather = Gather.new(params[:gather])
-    text = nil
-    begin
-      text = open(@gather.url).read
-    rescue => e
-      @@log.debug e
-      redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
-      return
-    end
-    @gather.title = Readability::Document.new(text).title
-    @gather.content = Readability::Document.new(text,
-      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
-      :attributes => ['src', 'href']).content
+    generate_gather(@gather)
+  end
 
-    @gather.user = current_user
-    @gather.save
-
-    redirect_to gathers_url
+  def create_by_url
+    @@log.debug "Action => create_by_url"
+    @gather = Gather.new
+    @gather.url = params[:url]
+    generate_gather(@gather)
   end
 
   def edit
@@ -60,6 +52,30 @@ class GathersController < ApplicationController
   end
 
   private
+
+  def generate_gather(gather)
+    @gather = gather
+    text = nil
+
+    begin
+      text = open(@gather.url).read
+    rescue => e
+      @@log.debug e
+      redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
+      return
+    end
+
+    @gather.title = Readability::Document.new(text).title
+    @gather.content = Readability::Document.new(text,
+      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
+      :attributes => ['src', 'href'],
+      :remove_unlikely_candidates => false).content
+
+    @gather.user = current_user
+    @gather.save
+    redirect_to gathers_url
+  end
+
   def get_gather
     @gather = Gather.find(params[:id])
   end
