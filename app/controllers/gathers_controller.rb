@@ -71,13 +71,14 @@ class GathersController < ApplicationController
       :attributes => ['src', 'href'],
       :remove_unlikely_candidates => false).content
     @md5_new = Digest::MD5.hexdigest(@gather.content)
-    @md5_last = Digest::MD5.hexdigest(Gather.last.content)
-    if @md5_new === @md5_last
+    @md5_last = Digest::MD5.hexdigest(Gather.last.content) unless Gather.last.nil?
+    if @md5_new === @md5_last || Gather.last.nil?
       @gather.user = current_user
       @gather.save
       redirect_to gathers_url
     else
       redirect_to gathers_url, :flash => { :alert => "Content repeated."}
+    end
   end
 
   def get_gather
