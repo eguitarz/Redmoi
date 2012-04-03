@@ -1,5 +1,5 @@
 @hide = false
-@test = () ->
+@edit = () ->
   if @hide
     $('.menu-del').css 'display' : 'none'
     $('#menu-edit').find('a').text 'EDIT'
