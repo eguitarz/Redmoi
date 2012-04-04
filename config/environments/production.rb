@@ -64,4 +64,19 @@ Redmoi::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  require 'tlsmail'
+  net::smtp.enable_tls(openssl::ssl::verify_none)
+  actionmailer::base.delivery_method = :smtp
+  actionmailer::base.perform_deliveries = true
+  actionmailer::base.raise_delivery_errors = true
+  actionmailer::base.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :tls                  => true,
+    :domain             => 'redmoi.heroku.com',
+    :authentication     => :plain,
+    :user_name          => env['GMAIL_USER_ID'],
+    :password           => env['GMAIL_USER_PASSWORD']
+  }
 end
