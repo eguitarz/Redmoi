@@ -70,10 +70,21 @@ class GathersController < ApplicationController
       :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
       :attributes => ['src', 'href'],
       :remove_unlikely_candidates => false).content
+    md5_new ||= ""
+    md5_new = Digest::MD5.hexdigest(@gather.content)
+    md5_last ||= ""
 
-    @gather.user = current_user
-    @gather.save
-    redirect_to gathers_url
+    unless (Gather.last.nil? or Gather.last.content.nil?)
+      md5_last = Digest::MD5.hexdigest(Gather.last.content)
+    end
+
+    if md5_new === md5_last
+      redirect_to gathers_url, :flash => { :alert => "Content repeated."}
+    else
+      @gather.user = current_user
+      @gather.save
+      redirect_to gathers_url, :flash => {:notice => "Success"}
+    end
   end
 
   def get_gather
