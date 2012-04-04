@@ -1,14 +1,8 @@
 <% if current_user %>
 
-<p class="row">
-  <span class="span1">
-    <%= link_to new_gather_path do %>
-      <i class="icon-plus"></i>
-    <% end %>
-  </span>
-  <span class="span1" id="menu-edit">
-    <%= link_to_function 'EDIT', 'edit()' %>
-  </span>
+<p>
+    <%= link_to '<i class="icon-plus icon-white"></i> New URL'.html_safe, new_gather_path, :class => "btn btn-primary btn-mini" %>
+    <%= link_to_function '<i class="icon-pencil icon-white"></i> Edit List'.html_safe, 'edit()', :class => "btn btn-primary btn-mini", :id => "menu-edit" %>
 </p>
 
   <% unless @gathers.nil? %>
