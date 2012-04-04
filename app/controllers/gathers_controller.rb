@@ -73,7 +73,10 @@ class GathersController < ApplicationController
     md5_new ||= ""
     md5_new = Digest::MD5.hexdigest(@gather.content)
     md5_last ||= ""
-    md5_last = Digest::MD5.hexdigest(Gather.last.content) unless Gather.last.nil?
+
+    unless (Gather.last.nil? or Gather.last.content.nil?)
+      md5_last = Digest::MD5.hexdigest(Gather.last.content)
+    end
 
     if md5_new === md5_last
       redirect_to gathers_url, :flash => { :alert => "Content repeated."}
