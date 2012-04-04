@@ -65,7 +65,7 @@ Redmoi::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   require 'tlsmail'
-  net::smtp.enable_tls(openssl::ssl::verify_none)
+  net::smtp.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   actionmailer::base.delivery_method = :smtp
   actionmailer::base.perform_deliveries = true
   actionmailer::base.raise_delivery_errors = true
