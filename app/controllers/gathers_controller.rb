@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class GathersController < ApplicationController
 
   before_filter :get_gather, only: [:show, :edit, :destroy]
