@@ -7,6 +7,10 @@ body {
   background: url(/stripe_red.png);
 }
 
+.wrapper {
+  background: url(/fade.png) repeat-x;
+}
+
 @mixin header-link {
   color: $header-link-color;
 }
