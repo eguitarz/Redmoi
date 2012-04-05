@@ -15,8 +15,18 @@ body {
   color: $header-link-color;
 }
 
+.menu-ul {
+  hr {
+    color: #afafaf;
+    background-color: #afafaf;
+    height: 1px;
+    margin: 20px 5px 5px -20px;
+  }
+}
+
+
 .menu-li {
-  border-bottom: $grey-border;
+  border-bottom: 0px;
   list-style-type: none;
   margin: 20px 5px 5px -20px;
 }
