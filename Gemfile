@@ -10,7 +10,7 @@ gem "ruby-readability", :require => 'readability'
 
 gem 'devise'
 gem 'simple_form'
-gem 'tlsmail'
+#gem 'tlsmail'
 
 # Gems used only for assets and not required
 # in production environments by default.

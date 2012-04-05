@@ -66,19 +66,19 @@ Redmoi::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   config.action_mailer.default_url_options = { :host => 'www.redmoi.com' }
-  require 'tlsmail'
-  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address            => 'smtp.gmail.com',
-    :port               => 587,
-    :tls                  => true,
-    :domain             => 'redmoi.heroku.com',
-    :authentication     => :plain,
-    :user_name          => ENV['GMAIL_USER_ID'],
-    :password           => ENV['GMAIL_USER_PASSWORD']
-  }
+  #require 'tlsmail'
+  #Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  #ActionMailer::Base.delivery_method = :smtp
+  #ActionMailer::Base.perform_deliveries = true
+  #ActionMailer::Base.raise_delivery_errors = true
+  #ActionMailer::Base.smtp_settings = {
+  #  :enable_starttls_auto => true,
+  #  :address            => 'smtp.gmail.com',
+  #  :port               => 587,
+  #  :tls                  => true,
+  #  :domain             => 'redmoi.heroku.com',
+  #  :authentication     => :plain,
+  #  :user_name          => ENV['GMAIL_USER_ID'],
+  #  :password           => ENV['GMAIL_USER_PASSWORD']
+  #}
 end
