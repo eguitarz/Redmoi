@@ -6,7 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
-gem "ruby-readability", :require => 'readability'
+gem "ruby-readability",  :require => 'readability'
 
 gem 'devise'
 gem 'simple_form'
