@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem "ruby-readability",  :require => 'readability'
+gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 gem 'devise'
 gem 'simple_form'
