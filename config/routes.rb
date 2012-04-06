@@ -1,5 +1,7 @@
 Redmoi::Application.routes.draw do
-  devise_for :users
+
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+
   match '/gathers/addurl' => 'gathers#create_by_url'
   match '/menu' => 'gathers#menu'
   resources :gathers
