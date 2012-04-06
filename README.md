@@ -21,10 +21,10 @@ Get started
 
     bundle install
     rake db:migrate
+    rake db:seed # <-- creates default admin account, initialize settings
 
 ### Add sample data (Optional)
 
-    rake db:seed
     rake db:sample
 
 ### Allow Gmail mailing service (Optional)
