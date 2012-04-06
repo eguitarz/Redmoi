@@ -5,7 +5,7 @@ Redmoi means Red = read, moi = me in french, so it can mean readme in a sortof t
 
 Redmoi is a bookmark system, which is able to fetch the URL, and extract the important text and save it.
 
-Redmoi designed to be an archivement tool for collecting internet resources, will not only focus on html resources but also on other media. (ex. PDF...)
+Redmoi designed to be an archive tool for collecting internet resources, will not only focus on html resources but also on other media. (ex. PDF...)
 
 Requirements
 ============
