@@ -1,5 +1,38 @@
 // custom css for Remoi
 $default-bg-color: #ffffff;
+$header-link-color: #ffffff;
+$grey-border: 1px solid #afafaf;
+
+body {
+  background: url(/stripe_red.png);
+}
+
+.wrapper {
+  background: url(/fade.png) repeat-x;
+}
+
+@mixin header-link {
+  color: $header-link-color;
+}
+
+.menu-ul {
+  hr {
+    color: #afafaf;
+    background-color: #afafaf;
+    height: 1px;
+    margin: 20px 5px 5px -20px;
+  }
+}
+
+
+.menu-li {
+  border-bottom: 0px;
+  list-style-type: none;
+  margin: 20px 5px 5px -20px;
+  .gather-title {
+    font-size: 14px;
+  }
+}
 
 #user_nav {
   color:#ffffff;
@@ -7,6 +40,17 @@ $default-bg-color: #ffffff;
   margin-right: -20px;
   background-color: #000000;
   text-align: right;
+
+  a {
+    @include header_link;
+    text-decoration: underline;
+  }
+  a:href {
+    @include header_link;
+  }
+  a:visited {
+    @include header_link;
+  }
 }
 
 .headblock {
@@ -14,26 +58,51 @@ $default-bg-color: #ffffff;
   background-color : #000000;
   color : #ffffff;
   border-radius : 0 0 20px 0;
-}
-.headblock h1 {
-  margin : 0;
+  h1 {
+    margin: 0;
+  }
+  a {
+    @include header_link;
+  }
+  a:href {
+    @include header_link;
+  }
+  a:visited {
+    @include header_link;
+  }
 }
 .sideblock {
-  border-right : 1px solid #afafaf;
-  border-bottom : 1px solid #afafaf;
+  border-right : $grey-border;
+  border-bottom : $grey-border;
   padding : 10px 5px;
   background-color : #dedede;
   min-height: 600px;
   box-shadow: 3px 0px 5px #888;
 }
+.container {
+  border-left : 1px solid #000000;
+  border-right : $grey-border;
+  background: #ffffff;
+  box-shadow: 1px 0px 3px #888;
+}
 .contentblock {
   padding : 10px 5px;
 }
 .footer {
-  background-color: $default-bg-color;
-  padding: 5px 10px;
-  border-radius: 0 10px 0px 10px;
+  background-color: #dfdfdf;
+  padding: 5px 0;
   min-height: 100px;
   text-align: center;
-  border: 1px solid #afafaf;
+  box-shadow: 0px -3px 3px #888;
+  border-top: 0px dashed #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #afafaf;
+}
+
+.menu-del {
+  a {
+   color: #000000;
+  }
+  margin: -5px 0 15px 15px;
+  display: none;
 }
