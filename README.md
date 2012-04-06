@@ -17,7 +17,7 @@ Requirements
 Get started
 ===========
 
-### Install gems and setup databse
+### Install gems and setup database
 
     bundle install
     rake db:migrate
