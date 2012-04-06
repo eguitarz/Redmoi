@@ -22,7 +22,7 @@ Get started
     bundle install
     rake db:migrate
 
-### Add smple data (Optional)
+### Add sample data (Optional)
 
     rake db:seed
     rake db:sample
