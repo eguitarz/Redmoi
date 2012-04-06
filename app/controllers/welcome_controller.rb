@@ -1,6 +1,6 @@
 require 'open-uri'
-class WelcomeController < ApplicationController
+class WelcomeController < GathersController
   def index
-    @gathers = Gather.all
+    get_gathers
   end
 end

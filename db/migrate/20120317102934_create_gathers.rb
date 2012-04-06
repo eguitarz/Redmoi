@@ -1,7 +1,7 @@
 class CreateGathers < ActiveRecord::Migration
   def change
     create_table :gathers do |t|
-      t.string :user_id
+      t.integer :user_id
       t.string :title
       t.text :content
       t.text :description
