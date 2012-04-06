@@ -69,9 +69,17 @@ class GathersController < ApplicationController
 
     @gather.title = Readability::Document.new(text).title
     @gather.content = Readability::Document.new(text,
-      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br'],
+      :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br', 'code'],
       :attributes => ['src', 'href'],
       :remove_unlikely_candidates => false).content
+
+    # User input limit check
+    if get_gathers.size > 100 # TODO The limit should retrieve from DB
+      redirect_to gathers_url, :flash => {:alert => "Cannot add more url, reach the system limit."} if get_gathers.size > 10
+      return
+    end
+
+    # Prevent input duplicate entry twice
     md5_new ||= ""
     md5_new = Digest::MD5.hexdigest(@gather.content)
     md5_last ||= ""
