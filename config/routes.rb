@@ -1,9 +1,9 @@
 Redmoi::Application.routes.draw do
-
-  get "admin/index"
-
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
+  match '/admin' => 'admin#index'
+  match '/admin/users' => 'admin#users'
+  match '/admin/gathers' => 'admin#gathers'
   match '/gathers/addurl' => 'gathers#create_by_url'
   match '/menu' => 'gathers#menu'
   resources :gathers

@@ -1,0 +1,36 @@
+<% if current_user.admin? %>
+<ul class="menu-ul">
+  <li class="menu-li parent-node">
+    <%= link_to 'Home', admin_path %>
+  </li>
+  <hr />
+  <li class="menu-li parent-node">
+    <%= link_to 'Users', '/admin/users' %>
+  </li>
+  <hr />
+  <li class="menu-li parent-node">
+    <%= link_to 'Gathers', '/admin/gathers' %>
+  </li>
+  <hr />
+</ul>
+
+<p>
+    <%= link_to '<i class="icon-plus icon-white"></i> New URL'.html_safe, new_gather_path, :class => "btn btn-primary btn-mini" %>
+    <%= link_to_function '<i class="icon-pencil icon-white"></i> Edit List'.html_safe, 'edit()', :class => "btn btn-primary btn-mini", :id => "menu-edit" %>
+</p>
+<p class="inbox">Inbox ( <%= @gathers.size %> / <%= Settings.article_limit %> )</p>
+
+  <% unless @gathers.nil? %>
+    <ul class="menu-ul">
+    <% @gathers.each do |g| %>
+      <li class="menu-li">
+        <span class="menu-del"><%= link_to 'x', gather_path(g), :method => :delete %></span>
+        <span class="gather-title"><%= link_to truncate(g.title, :length => 30), gather_path(g) %></span>
+      </li>
+      <% if g != @gathers.last %>
+        <hr />
+      <% end %>
+    <% end %>
+    </ul>
+  <% end %>
+<% end %>
