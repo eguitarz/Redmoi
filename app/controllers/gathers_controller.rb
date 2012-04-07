@@ -84,6 +84,7 @@ class GathersController < ApplicationController
     md5_new = Digest::MD5.hexdigest(@gather.content)
     md5_last ||= ""
 
+    # TODO BUG SHOULD BE FIXED: different user might add the same content, should not block here
     unless (Gather.last.nil? or Gather.last.content.nil?)
       md5_last = Digest::MD5.hexdigest(Gather.last.content)
     end

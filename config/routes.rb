@@ -1,5 +1,7 @@
 Redmoi::Application.routes.draw do
 
+  get "admin/index"
+
   devise_for :users, :controllers => { :registrations => 'registrations' }
 
   match '/gathers/addurl' => 'gathers#create_by_url'
