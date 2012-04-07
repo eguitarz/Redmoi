@@ -4,6 +4,7 @@
     <%= link_to '<i class="icon-plus icon-white"></i> New URL'.html_safe, new_gather_path, :class => "btn btn-primary btn-mini" %>
     <%= link_to_function '<i class="icon-pencil icon-white"></i> Edit List'.html_safe, 'edit()', :class => "btn btn-primary btn-mini", :id => "menu-edit" %>
 </p>
+<p class="inbox">Inbox ( <%= @gathers.size %> / <%= Settings.article_limit %> )</p>
 
   <% unless @gathers.nil? %>
     <ul class="menu-ul">
