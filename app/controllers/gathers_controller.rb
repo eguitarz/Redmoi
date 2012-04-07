@@ -20,7 +20,10 @@ class GathersController < ApplicationController
   end
 
   def show
-    # Still need @gathers here to display menu
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -104,7 +107,6 @@ class GathersController < ApplicationController
 
   def get_gathers
     unless current_user.nil?
-      @@log.debug "current user id: " + current_user.id.to_s()
       @gathers = Gather.where(:user_id => current_user.id).order("updated_at DESC")
     end
   end
