@@ -1,6 +1,9 @@
-<h1> <%= @gather.title %> </h1>
-
-<p> <%= simple_format @gather.content %> </p>
+<% if @gather.visibility %>
+  <h1> <%= @gather.title %> </h1>
+  <p> <%= simple_format @gather.content %> </p>
+<% else %>
+  <p> You are not allowed to see this article.</p>
+<% end %>
 <p>
   <%= link_to 'original source', @gather.url, :target => "_blank" %>
 </p>
