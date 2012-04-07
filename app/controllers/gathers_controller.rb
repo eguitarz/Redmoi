@@ -74,7 +74,7 @@ class GathersController < ApplicationController
       :remove_unlikely_candidates => false).content
 
     # User input limit check
-    if get_gathers.size > 100 # TODO The limit should retrieve from DB
+    if get_gathers.size > Settings.article_limit
       redirect_to gathers_url, :flash => {:alert => "Cannot add more url, reach the system limit."} if get_gathers.size > 10
       return
     end

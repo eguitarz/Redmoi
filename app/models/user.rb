@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :gathers
+  has_settings
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
