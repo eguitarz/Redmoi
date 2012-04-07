@@ -60,6 +60,7 @@ body {
   border-radius : 0 0 20px 0;
   h1 {
     margin: 0;
+    float: left;
   }
   a {
     @include header_link;
@@ -69,6 +70,10 @@ body {
   }
   a:visited {
     @include header_link;
+  }
+  .header-footer {
+    font-size: 10px;
+    padding-left: 10px;
   }
 }
 .sideblock {
