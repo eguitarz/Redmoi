@@ -2,6 +2,10 @@
 
 <% if current_user.admin? %>
   <p>Allo, dominas...</p>
+  <ul>
+    <li>We have <%= @user_size %> users.</li>
+    <li>We have <%= @gather_size %> gathers.</li>
+  </ul>
 <% else %>
   <p>You are not my master, leave and never come back!</p>
 <% end %>

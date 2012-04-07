@@ -4,6 +4,8 @@ class AdminController < ApplicationController
   layout "admin"
 
   def index
+    @user_size = User.count
+    @gather_size = Gather.count
   end
 
   def users
