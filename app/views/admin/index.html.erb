@@ -1,0 +1,25 @@
+<h1>Administration</h1>
+
+<% if current_user.admin? %>
+  <p>Allo, dominas...</p>
+
+  <div class="admin-user-list"><span class="admin-user-list-title">Users</span>
+  <ul>
+    <% @users.each do |u| %>
+      <li> <%= u.email %> </li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div class="admin-gather-list"><span class="admin-gather-list-title">Gathers</span>
+  <ul>
+    <% @gathers.each do |g| %>
+      <li> <%= g.title %> </li>
+      owned by <span ><%= g.user.email %></span>
+    <% end %>
+  </ul>
+  </div>
+
+<% else %>
+  <p>You are not my master, leave and never come back!</p>
+<% end %>
