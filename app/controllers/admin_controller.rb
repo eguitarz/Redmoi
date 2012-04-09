@@ -12,6 +12,13 @@ class AdminController < ApplicationController
     @users = User.all
   end
 
+  def delete_user
+    @gathers_of_user = Gather.where(:user_id => params[:id])
+    @gathers_of_user.each {|g| g.delete}
+    @user = User.find(params[:id])
+    @user.delete
+  end
+
   def gathers
   end
 

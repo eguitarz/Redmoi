@@ -1,0 +1,21 @@
+<div><%= link_to 'Back', admin_gathers_path %></div>
+
+<h1><%= @gather.title %></h1>
+
+<div class="row">
+  <span class="span2">ID:</span><span class="span4"><%= @gather.id %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Updated at:</span><span class="span4"><%= @gather.updated_at %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Owner:</span><span class="span4"><%= link_to @user.email, admin_user_path(@user) %></span>
+</div>
+<hr/>
+
+<div class="row">
+  <span class="span8"><%= simple_format @gather.content %></span>
+</div>
+
