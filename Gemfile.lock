@@ -1,7 +1,8 @@
-PATH
-  remote: /Users/eguitarz/Developer/juice
+GIT
+  remote: https://github.com/eguitarz/juice
+  revision: 84f0daa388ea392a01fb4ccc793ffbeae7229e4f
   specs:
-    juice (0.0.0)
+    juice (0.0.1)
 
 GEM
   remote: https://rubygems.org/
