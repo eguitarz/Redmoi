@@ -1,4 +1,5 @@
 @hide = false
+
 @edit = () ->
   if @hide
     $('.menu-del').css 'display' : 'none'

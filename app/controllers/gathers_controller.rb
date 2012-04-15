@@ -3,7 +3,7 @@ require 'open-uri'
 class GathersController < ApplicationController
 
   before_filter :get_gather, only: [:show, :edit, :destroy]
-  before_filter :get_gathers, only: [:index, :menu, :show, :new]
+  before_filter :get_gathers, only: [:index, :menu, :show, :new, :destroy]
   before_filter :authenticate_user!
 
   # Gathers Controller require verified users
@@ -52,8 +52,11 @@ class GathersController < ApplicationController
   end
 
   def destroy
+    respond_to do |format|
+      format.js { render :gid => @gather.id }
+    end
     @gather.delete
-    redirect_to gathers_url
+    #redirect_to gathers_url
   end
 
   private

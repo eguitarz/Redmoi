@@ -1,22 +1,26 @@
 <% if current_user %>
 
-<p>
+  <p>
     <%= link_to '<i class="icon-plus icon-white"></i> New URL'.html_safe, new_gather_path, :class => "btn btn-primary btn-mini" %>
     <%= link_to_function '<i class="icon-pencil icon-white"></i> Edit List'.html_safe, 'edit()', :class => "btn btn-primary btn-mini", :id => "menu-edit" %>
-</p>
-<p class="inbox">Inbox ( <%= @gathers.size %> / <%= Settings.article_limit %> )</p>
+  </p>
+  <div id="menu-content">
+    <p class="inbox">Inbox ( <span id="inbox-size"><%= @gathers.size %></span> / <%= Settings.article_limit %> )</p>
 
-  <% unless @gathers.nil? %>
-    <ul class="menu-ul">
-    <% @gathers.each do |g| %>
-      <li class="menu-li">
-        <span class="menu-del"><%= link_to 'x', gather_path(g), :method => :delete %></span>
-        <span class="gather-title"><%= link_to truncate(g.title, :length => 30), gather_path(g), :remote => true %></span>
-      </li>
-      <% if g != @gathers.last %>
-        <hr />
-      <% end %>
+    <% unless @gathers.nil? %>
+      <ul class="menu-ul">
+        <% @gathers.each do |g| %>
+          <div id="gather_<%= g.id %>">
+            <li class="menu-li">
+              <span class="menu-del"><%= link_to 'x', gather_path(g), :remote => true, :method => :delete, "data-type" => "script" %></span>
+              <span class="gather-title"><%= link_to truncate(g.title, :length => 30), gather_path(g), :remote => true %></span>
+            </li>
+            <% if g != @gathers.last %>
+              <hr />
+            <% end %>
+          </div>
+        <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
+  </div>
 <% end %>
