@@ -6,7 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
-gem "ruby-readability",  :require => 'readability'
+gem 'nokogiri'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 gem 'devise'
@@ -28,6 +28,7 @@ end
 gem 'jquery-rails'
 
 group :development do
+  gem 'juice', :path => '/Users/eguitarz/Developer/juice/'
   gem 'rails_best_practices'
 end
 

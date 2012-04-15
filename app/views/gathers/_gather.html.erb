@@ -1,5 +1,6 @@
-<h1> <%= @gather.title %> </h1>
-<p> <%= simple_format @gather.content %> </p>
-<p>
-  <%= link_to 'original source', @gather.url, :target => "_blank" %>
-</p>
+<div class="row">
+
+  <span class="span2"><%= link_to 'original source', @gather.url, :target => "_blank" %></span>
+</div>
+<hr />
+<%= @gather.content.html_safe %>
