@@ -99,7 +99,8 @@ body {
 .contentblock {
   padding : 10px 5px;
   font-family: "Helvetica", "Verdana", "Courier New";
-  overflow: scroll;
+  overflow: auto;
+  overflow-y: hidden;
   line-height: 1.7em;
   text-align: justify;
   h1 {
@@ -117,6 +118,14 @@ body {
 
   h4 {
     margin: 10px 0
+  }
+
+  img {
+    max-width: 620px;
+  }
+
+  table {
+    width: 620px;
   }
 
   p {
