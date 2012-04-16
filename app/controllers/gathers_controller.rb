@@ -55,7 +55,7 @@ class GathersController < ApplicationController
     respond_to do |format|
       format.js { render :gid => @gather.id }
     end
-    @gather.delete
+    @gather.delete if current_user && @gather.user_id == current_user.id
     #redirect_to gathers_url
   end
 
