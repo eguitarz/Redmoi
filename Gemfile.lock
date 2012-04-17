@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/eguitarz/juice
-  revision: b9da3b1e8232d2063b03f34d324868cda126ac04
+  revision: 7806970fe77db1bae8e74d265daca0cedb8e344b
   specs:
     juice (0.0.1)
 
