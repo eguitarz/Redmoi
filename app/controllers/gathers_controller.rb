@@ -94,7 +94,7 @@ class GathersController < ApplicationController
 
     @gather.user = current_user
     @gather.save
-    redirect_to gathers_url, :flash => {:notice => "Success"}
+    redirect_to gather_url(@gather), :flash => {:notice => "Success"}
   end
 
   def get_gather
