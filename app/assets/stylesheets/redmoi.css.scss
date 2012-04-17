@@ -59,9 +59,18 @@ body {
   }
 }
 
+#page-logo {
+    a {
+      display: block;
+      width: 100px;
+      height: 25px;
+    }
+}
+
 .headblock {
   padding : 5px 10px;
-  background: #000000 url('/redmoi-logo-small.png') no-repeat right top;
+  height: 40px;
+  background: #000000 url('/redmoi-banner.png') no-repeat left top;
   color : #ffffff;
   border-radius : 0 0 20px 0;
   h1 {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redmoi</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render :partial => "/google_analytics" %>
+</head>
+<body>
+<div class="wrapper">
+<div class="container">
+    <div id="user_nav">
+      <% if current_user %>
+        Logged in as <%= current_user.email %>
+        <% if current_user.admin? %>
+          ( <%= link_to 'admin', admin_path  %> )
+        <% end %>
+      <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path %> or
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </div>
+  <div class="row">
+    <div class="span12 headblock">
+      <h1 id="page-logo"><a href="/" title="home"></a></h1>
+      <span class="header-footer">beta</span>
+    </div>
+  </div>
+  <div class="row container">
+    <div class="row">
+      <div class="span3 sideblock">
+        <%= yield(:side) %>
+        <% if current_user && current_user.admin? %>
+          <%= yield(:side_admin) %>
+        <% end %>
+      </div>
+      <div class="span8 contentblock" id="article-content">
+        <% unless notice.nil? %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% unless alert.nil? %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12 footer">
+      Copyright &copy; 2012
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
+
