@@ -42,7 +42,7 @@
 <% @gathers.each do |g| %>
   <div class="row">
     <span class="span1"><%= g.id %></span>
-    <span class="span4"><%= link_to truncate(g.title), admin_gather_path(g) %></span>
+    <span class="span3"><%= link_to truncate(g.title), admin_gather_path(g) %></span>
     <span class="span2"><%= g.updated_at %></span>
     <span class="span1"><%= link_to 'delete', admin_gather_path(g), :method => :delete %></span>
   </div>
