@@ -26,7 +26,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'juice', :git => 'https://github.com/eguitarz/juice'
+#gem 'juice', :git => 'https://github.com/eguitarz/juice'
+gem 'juice', :path => '/Users/eguitarz/Developer/juice'
 
 group :development do
   #gem 'juice', :path => '/Users/eguitarz/Developer/juice/'
