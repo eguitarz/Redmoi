@@ -61,21 +61,18 @@ class GathersController < ApplicationController
 
   def generate_gather(gather)
     @gather = gather
-    text = nil
 
-    @gather.url = 'http://' + @gather.url if @gather.url.slice(0..6) != 'http://'
+    # User input limit check
+    if get_gathers.size >= Settings.article_limit
+      redirect_to gathers_url, :flash => {:alert => "Cannot add more url, reach the system limit."} if get_gathers.size > 10
+      return
+    end
 
     begin
       @gather.start_gathering
     rescue => e
       @@log.debug e
       redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
-      return
-    end
-
-    # User input limit check
-    if get_gathers.size >= Settings.article_limit
-      redirect_to gathers_url, :flash => {:alert => "Cannot add more url, reach the system limit."} if get_gathers.size > 10
       return
     end
 
