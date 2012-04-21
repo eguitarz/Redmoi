@@ -68,23 +68,15 @@ class GathersController < ApplicationController
     @gather.url = 'http://' + @gather.url if @gather.url.slice(0..6) != 'http://'
 
     begin
-      text = open(@gather.url).read
+      juice = Juice.new(@gather.url)
+      juice.extract
+      @gather.title = juice.title
+      @gather.content = juice.content
     rescue => e
       @@log.debug e
       redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
       return
     end
-
-    #@gather.title = Readability::Document.new(text).title
-    #@gather.content = Readability::Document.new(text,
-    #  :tags => ['h1', 'h2', 'h3', 'img', 'li', 'ul', 'a', 'p', 'div', 'span', 'br', 'code'],
-    #  :attributes => ['src', 'href'],
-    #  :remove_unlikely_candidates => false).content
-
-    juice = Juice.new(@gather.url)
-    juice.extract
-    @gather.title = juice.title
-    @gather.content = juice.content
 
     # User input limit check
     if get_gathers.size >= Settings.article_limit
