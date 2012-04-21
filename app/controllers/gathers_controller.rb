@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class GathersController < ApplicationController
 
   before_filter :get_gather, only: [:show, :edit, :destroy]
@@ -68,10 +66,7 @@ class GathersController < ApplicationController
     @gather.url = 'http://' + @gather.url if @gather.url.slice(0..6) != 'http://'
 
     begin
-      juice = Juice.new(@gather.url)
-      juice.extract
-      @gather.title = juice.title
-      @gather.content = juice.content
+      @gather.start_gathering
     rescue => e
       @@log.debug e
       redirect_to gathers_url, :flash => { :alert => "Unable to fetch the content."}
