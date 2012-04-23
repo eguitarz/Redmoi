@@ -7,9 +7,7 @@ Redmoi::Application.routes.draw do
   end
 
   match '/admin' => 'admin#index'
-  #match '/admin/users' => 'admin#users'
-  #match '/admin/gathers' => 'admin#gathers'
-  match '/gathers/addurl' => 'gathers#create_by_url'
+  match '/gathers/extadd' => 'gathers#create_by_image'
   match '/menu' => 'gathers#menu'
 
   resources :gathers
