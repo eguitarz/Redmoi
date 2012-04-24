@@ -33,7 +33,8 @@ class GathersController < ApplicationController
       generate_gather(@gather)
       redirect_to gather_url(@gather), :flash => {:notice => "Success"}
     rescue Exception => e
-      redirect_to gathers_url, :flash => {:alert => e.to_s}
+      @@log.warn("Error in creating gather. #{e}")
+      redirect_to gathers_url, :flash => {:notice => "We recommand to visit the site directly."}
     end
   end
 
@@ -102,7 +103,13 @@ class GathersController < ApplicationController
     end
 
     @gather.user = current_user
-    @gather.save
+
+    begin
+      @gather.save
+    rescue => e
+      @gather.content = ''
+      raise "Error in saving gatehr."
+    end
   end
 
   def check_limit
