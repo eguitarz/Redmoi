@@ -9,6 +9,6 @@ class Gather < ActiveRecord::Base
     juice = Juice.new(self.url)
     juice.extract
     self.title = juice.title
-    self.content = juice.content
+    self.content = juice.content.force_encoding("utf-8")
   end
 end
