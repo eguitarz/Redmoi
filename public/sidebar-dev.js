@@ -1,5 +1,5 @@
 try {
-  var REDMOI_HOME = 'http://www.redmoi.com/';
+  var REDMOI_HOME = 'http://127.0.0.1:3000/';
   var forceRemove = function() {
    $("#REDMOI_SIDEBAR").remove();
   }

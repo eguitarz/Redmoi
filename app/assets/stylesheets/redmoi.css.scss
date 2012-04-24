@@ -2,6 +2,7 @@
 $default-bg-color: #ffffff;
 $header-link-color: #ffffff;
 $grey-border: 1px solid #afafaf;
+$white-border: 1px solid #ffffff;
 
 body {
   background: url(/stripe_red.png);
@@ -15,6 +16,10 @@ body {
   color: $header-link-color;
 }
 
+.toolbar {
+  text-align: right;
+}
+
 .inbox {
   font-family: "Courier New", "Courier";
   color: #000555;
@@ -22,7 +27,7 @@ body {
 }
 
 img {
-  border-radius: 8px;  
+  border-radius: 8px;
 }
 
 .menu-ul {
@@ -96,12 +101,12 @@ img {
   }
 }
 .sideblock {
-  border-right : $grey-border;
-  border-bottom : $grey-border;
+  border-right : $white-border;
+  border-bottom : $white-border;
   padding : 10px 5px;
   background-color : #dedede;
   min-height: 600px;
-  box-shadow: 3px 0px 5px #888;
+  box-shadow: 0px 0px 0px 1.6px #888;
 }
 .container {
   border-left : 1px solid #000000;

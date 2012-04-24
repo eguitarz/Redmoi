@@ -1,6 +1,6 @@
-<div class="row">
-
-  <span class="span2"><%= link_to 'original source', @gather.url, :target => "_blank" %></span>
+<div class="toolbar">
+  <span class="link-source"><%= link_to '<i class="icon-share icon-white"></i> view source'.html_safe, @gather.url, :target => "_blank", :class => "btn btn-primary btn-mini" %></span>
+  <span class="delete-source"><%= link_to '<i class="icon-remove icon-white"></i> delete'.html_safe, gather_path(@gather), :class => 'btn btn-primary btn-mini', :method => :delete %></span>
 </div>
 <hr />
 <div class="row">

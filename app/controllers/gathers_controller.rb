@@ -80,7 +80,9 @@ class GathersController < ApplicationController
     @gather.delete if current_user && @gather.user_id == current_user.id
     respond_to do |format|
       format.js { render :gid => @gather.id }
+      format.html { redirect_to gathers_url, :flash => {:notice => 'Deleted the article' } }
     end
+
   end
 
   private

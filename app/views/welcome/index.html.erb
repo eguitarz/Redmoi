@@ -1,6 +1,6 @@
 <% if current_user  %>
   <p>You can drag the bookmarklet to your tool bar, to add the page you're interested in.</p>
-  <a href="javascript:var%20url%20=%20%22http://redmoi.heroku.com/gathers/addurl?url=%22%20+%20encodeURIComponent(document.location.href);window.open(url,%20%22Ratting%22,%22width=550,height=170,0,status=0,%22);"><img src="/redmoi-logo.png" alt="Redmoi later" width="120px" /></a>
+  <a href="javascript:(function(){JQ_SCRIPT=document.createElement('SCRIPT');JQ_SCRIPT.type='text/javascript';JQ_SCRIPT.src='http://www.redmoi.com/jquery.js';REDMOI_SCRIPT=document.createElement('SCRIPT');REDMOI_SCRIPT.type='text/javascript';REDMOI_SCRIPT.src='http://www.redmoi.com/sidebar.js';document.getElementsByTagName('head')[0].appendChild(JQ_SCRIPT);document.getElementsByTagName('head')[0].appendChild(REDMOI_SCRIPT);})();"><img src="/redmoi-logo.png" alt="Redmoi later" width="120px" /></a>
 <% else %>
   <p>Please login or sign up for a new account.</p>
 <% end %>

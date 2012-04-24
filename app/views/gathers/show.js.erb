@@ -1,1 +1,6 @@
 $('.contentblock').html("<%= j(render :partial => 'gather') %>");
+
+$(document).ready(
+function() {
+  $('img').error(function() {$(this).remove();});
+});
