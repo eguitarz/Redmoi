@@ -108,6 +108,7 @@ class GathersController < ApplicationController
       @gather.save
     rescue => e
       @gather.content = ''
+      @gather.save
       raise "Error in saving gatehr."
     end
   end
