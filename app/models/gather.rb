@@ -5,7 +5,7 @@ class Gather < ActiveRecord::Base
   attr_accessible :title, :content, :description, :keyword, :url
 
   def content
-    read_attribute(:content).encode('utf-8')
+    read_attribute(:content).gsub(/['"\\\x0]/,'\\\\\0')
   end
 
   def start_gathering
