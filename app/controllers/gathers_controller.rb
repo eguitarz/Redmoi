@@ -107,7 +107,7 @@ class GathersController < ApplicationController
     begin
       @gather.save
     rescue => e
-      @gather.content = ''
+      @gather.content = 'Recommand to visit <a href="' + @gather.url + '">web</a> directly.'
       @gather.save
       raise "Error in saving gatehr."
     end
