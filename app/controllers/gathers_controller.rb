@@ -34,7 +34,7 @@ class GathersController < ApplicationController
       redirect_to gather_url(@gather), :flash => {:notice => "Success"}
     rescue Exception => e
       @@log.warn("Error in creating gather. #{e}")
-      redirect_to gathers_url, :flash => {:notice => "We recommand to visit the site directly."}
+      redirect_to gather_url(@gather), :flash => {:notice => "We recommand to visit the site directly."}
     end
   end
 
