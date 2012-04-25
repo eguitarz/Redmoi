@@ -11,3 +11,7 @@
     $('.menu-del').addClass 'close'
     $('#edit-label').html 'Cancel'
     @hide = true
+
+@show_loading = () ->
+  $('.contentblock').html "Loading..."
+
