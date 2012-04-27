@@ -1,10 +1,12 @@
 <div class="toolbar">
-  <span class="link-source"><%= link_to '<i class="icon-share icon-white"></i> view source'.html_safe, @gather.url, :target => "_blank", :class => "btn btn-primary btn-mini" %></span>
-  <span class="delete-source"><%= link_to '<i class="icon-remove icon-white"></i> delete'.html_safe, gather_path(@gather), :class => 'btn btn-primary btn-mini', :method => :delete %></span>
+  <span class="link-source"><%= link_to '<i class="icon-share icon-white"></i> view source'.html_safe, g.url, :target => "_blank", :class => "btn btn-primary btn-mini" %></span>
+  <span class="delete-source"><%= link_to '<i class="icon-remove icon-white"></i> delete'.html_safe, gather_path(g), :class => 'btn btn-primary btn-mini', :method => :delete %></span>
+</div>
+<div class="article-title">
 </div>
 <hr />
 <div class="row">
   <div class="content-div">
-    <%= @gather.content.html_safe %>
+    <%= g.content.html_safe %>
   </div>
 </div>

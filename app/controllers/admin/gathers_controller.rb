@@ -33,7 +33,7 @@ class Admin::GathersController < ApplicationController
   private
 
   def get_gathers
-    @gathers = Gather.find(:all, :order => 'updated_at DESC')
+    @gathers = Gather.everything
   end
 
   def get_gather

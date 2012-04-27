@@ -13,7 +13,7 @@
           <div id="gather_<%= g.id %>">
             <li class="menu-li">
               <span class="menu-del"><%= link_to 'x', gather_path(g), :remote => true, :method => :delete, "data-type" => "script" %></span>
-	      <span class="gather-title"><%= link_to truncate(g.title, :length => 30), gather_path(g), :remote => true, :onclick => 'show_loading();' %></span>
+              <span class="gather-title"><%= link_to truncate(g.title, :length => 30), gather_path(g), :remote => true, :onclick => 'show_loading();' %></span>
             </li>
             <% if g != @gathers.last %>
               <hr />

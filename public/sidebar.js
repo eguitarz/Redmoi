@@ -1,3 +1,7 @@
+while (!jQuery) {
+
+}
+
 try {
   var REDMOI_HOME = 'http://www.redmoi.com/';
   var forceRemove = function() {

@@ -1,4 +1,4 @@
-$('.contentblock').html("<%= j(render :partial => 'gather') %>");
+$('.contentblock').html("<%= j(render :partial => 'gather', :locals => {:g => @gather}) %>");
 
 $(document).ready(
 function() {
