@@ -1,0 +1,18 @@
+<h1>Users</h1>
+count: <%= @users.size %>
+<hr />
+
+<div class="row">
+    <span class="span1">ID</span>
+    <span class="span3">email</span>
+    <span class="span4"></span>
+  </div>
+
+<% @users.each do |u| %>
+  <div class="row">
+    <span class="span1"><%= u.id %></span>
+    <span class="span3"><%= link_to u.email, admin_user_path(u) %></span>
+    <span class="span2"><%= u.created_at %></span>
+    <span class="span1"><%= link_to 'delete', admin_user_path(u), :method => :delete %></span>
+  </div>
+<% end %>

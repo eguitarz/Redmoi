@@ -1,12 +1,6 @@
 <% if current_user  %>
   <p>You can drag the bookmarklet to your tool bar, to add the page you're interested in.</p>
-  <a href="javascript:var%20url%20=%20%22http://redmoi.heroku.com/gathers/addurl?url=%22%20+%20encodeURIComponent(document.location.href);window.open(url,%20%22Ratting%22,%22width=550,height=170,0,status=0,%22);"><img src="assets/rails.png" alt="Redmoi later"/></a>
+  <a href="javascript:var%20url%20=%20%22http://redmoi.heroku.com/gathers/addurl?url=%22%20+%20encodeURIComponent(document.location.href);window.open(url,%20%22Ratting%22,%22width=550,height=170,0,status=0,%22);"><img src="/redmoi-logo.png" alt="Redmoi later" width="120px" /></a>
 <% else %>
   <p>Please login or sign up for a new account.</p>
-<% end %>
-
-<% content_for(:side) do %>
-  <section>
-    <%= render :partial => "/menu" %>
-  </section>
 <% end %>

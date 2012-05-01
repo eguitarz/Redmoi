@@ -15,6 +15,16 @@ body {
   color: $header-link-color;
 }
 
+.inbox {
+  font-family: "Courier New", "Courier";
+  color: #000555;
+  font-size: 1.2em;
+}
+
+img {
+  border-radius: 8px;  
+}
+
 .menu-ul {
   hr {
     color: #afafaf;
@@ -38,7 +48,7 @@ body {
   color:#ffffff;
   padding-right: 20px;
   margin-right: -20px;
-  background-color: #000000;
+  background: #000000;
   text-align: right;
 
   a {
@@ -53,13 +63,23 @@ body {
   }
 }
 
+#page-logo {
+    a {
+      display: block;
+      width: 100px;
+      height: 25px;
+    }
+}
+
 .headblock {
   padding : 5px 10px;
-  background-color : #000000;
+  height: 40px;
+  background: #000000 url('/redmoi-banner.png') no-repeat left top;
   color : #ffffff;
   border-radius : 0 0 20px 0;
   h1 {
     margin: 0;
+    float: left;
   }
   a {
     @include header_link;
@@ -69,6 +89,10 @@ body {
   }
   a:visited {
     @include header_link;
+  }
+  .header-footer {
+    font-size: 10px;
+    padding-left: 10px;
   }
 }
 .sideblock {
@@ -87,6 +111,55 @@ body {
 }
 .contentblock {
   padding : 10px 5px;
+  font-family: "Helvetica", "Verdana", "Courier New";
+  overflow: hidden;
+  line-height: 1.7em;
+  text-align: justify;
+  h1 {
+    font-size: 2.0em;
+    margin: 10px 0
+  }
+
+  h2 {
+    margin: 10px 0
+  }
+
+  h3 {
+    margin: 10px 0
+  }
+
+  h4 {
+    margin: 10px 0
+  }
+
+  img {
+    max-width: 620px;
+  }
+
+  table {
+    width: 620px;
+  }
+
+  p {
+    line-height: 1.8em;
+    font-size: 14px;
+    margin: 0 0 1.5em 0px;
+  }
+
+  div {
+    @extend p;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    line-height: 1.7em;
+    font-size: 14px;
+    margin: 0px 0px 1em 0px;
+    text-align: -webkit-match-parent;
+  }
 }
 .footer {
   background-color: #dfdfdf;
@@ -106,3 +179,4 @@ body {
   margin: -5px 0 15px 15px;
   display: none;
 }
+

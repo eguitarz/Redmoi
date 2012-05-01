@@ -1,53 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Redmoi</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="wrapper">
-<div class="container">
-    <div id="user_nav">
-      <% if current_user %>
-        Logged in as <%= current_user.email %>
-      <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or
-        <%= link_to "Log in", new_user_session_path %>
-      <% end %>
-    </div>
-  <div class="row">
-    <div class="span12 headblock">
-      <h1><a href="/">RedMoi</a></h1>
-    </div>
-  </div>
-  <div class="row container">
-    <div class="row">
-      <div class="span3 sideblock">
-        <%= yield(:side) %>
-      </div>
-      <div class="span8 contentblock">
-        <% unless notice.nil? %>
-          <p class="notice"><%= notice %></p>
-        <% end %>
-        <% unless alert.nil? %>
-          <p class="alert"><%= alert %></p>
-        <% end %>
-
-        <%= yield %>
-
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span12 footer">
-      Copyright &copy; 2012
-    </div>
-  </div>
-</div>
-</div>
-
-</body>
-</html>
+<% content_for(:side) do %>
+  <section>
+    <%= render :partial => "/menu" %>
+  </section>
+<% end %>
+<%= render :partial => '/layouts/template' %>

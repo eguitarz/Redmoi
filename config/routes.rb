@@ -1,7 +1,17 @@
 Redmoi::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+
+  namespace :admin do |a|
+    resources :users
+    resources :gathers
+  end
+
+  match '/admin' => 'admin#index'
+  #match '/admin/users' => 'admin#users'
+  #match '/admin/gathers' => 'admin#gathers'
   match '/gathers/addurl' => 'gathers#create_by_url'
   match '/menu' => 'gathers#menu'
+
   resources :gathers
 
   # The priority is based upon order of creation:
