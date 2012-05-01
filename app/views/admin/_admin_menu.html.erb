@@ -1,0 +1,17 @@
+<% if current_user.admin? %>
+<ul class="menu-ul">
+  <li class="menu-li parent-node">
+    <%= link_to 'Home', admin_path %>
+  </li>
+  <hr />
+  <li class="menu-li parent-node">
+    <%= link_to 'Users', admin_users_path %>
+  </li>
+  <hr />
+  <li class="menu-li parent-node">
+    <%= link_to 'Gathers', admin_gathers_path %>
+  </li>
+  <hr />
+</ul>
+
+  <% end %>

@@ -1,0 +1,14 @@
+<% if current_user.admin? %>
+
+  <div class="admin-gather-list"><span class="admin-gather-list-title">Gathers</span>
+  <ul>
+    <% @gathers.each do |g| %>
+      <li> <%= g.title %> </li>
+      owned by <span ><%= g.user.email %></span>
+    <% end %>
+  </ul>
+  </div>
+
+<% else %>
+  <p>You are not my master, leave and never come back!</p>
+<% end %>

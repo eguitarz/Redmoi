@@ -1,12 +1,13 @@
 @hide = false
+
 @edit = () ->
   if @hide
     $('.menu-del').css 'display' : 'none'
-    $('#menu-edit').find('a').text 'EDIT'
+    $('#edit-label').html 'Edit List'
     $('.menu-del').removeClass 'close'
     @hide = false
   else
     $('.menu-del').css 'display' : 'inline'
     $('.menu-del').addClass 'close'
-    $('#menu-edit').find('a').text 'CANCEL'
+    $('#edit-label').html 'Cancel'
     @hide = true

@@ -1,0 +1,10 @@
+<div class="row">
+
+  <span class="span2"><%= link_to 'original source', @gather.url, :target => "_blank" %></span>
+</div>
+<hr />
+<div class="row">
+  <div class="content-div">
+    <%= @gather.content.html_safe %>
+  </div>
+</div>

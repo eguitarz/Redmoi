@@ -1,0 +1,12 @@
+<% if current_user.admin? %>
+  <div class="admin-user-list"><span class="admin-user-list-title">Users</span>
+  <ul>
+    <% @users.each do |u| %>
+      <li> <%= u.email %> <%= '( admin )' if u.admin %></li>
+    <% end %>
+  </ul>
+  </div>
+
+<% else %>
+  <p>You are not my master, leave and never come back!</p>
+<% end %>

@@ -1,0 +1,49 @@
+<div><%= link_to 'Back', admin_users_path %></div>
+
+<h1><%= @user.email %></h1>
+
+<div class="row">
+  <span class="span2">ID:</span><span class="span4"><%= @user.id %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Admin:</span><span class="span4"><%= @user.admin %></span>
+</div>
+
+<div class="row">
+  <span class="span2">E-mail:</span><span class="span4"><%= @user.email %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Login count:</span><span class="span4"><%= @user.sign_in_count %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Last seen at:</span><span class="span4"><%= @user.last_sign_in_at %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Last ip:</span><span class="span4"><%= @user.last_sign_in_ip %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Current seen at:</span><span class="span4"><%= @user.current_sign_in_at %></span>
+</div>
+
+<div class="row">
+  <span class="span2">Current ip:</span><span class="span4"><%= @user.current_sign_in_ip %></span>
+</div>
+
+<hr/>
+<div class="row">
+  <span class="span8">Owned gathers:</span>
+</div>
+
+<% @gathers.each do |g| %>
+  <div class="row">
+    <span class="span1"><%= g.id %></span>
+    <span class="span3"><%= link_to truncate(g.title), admin_gather_path(g) %></span>
+    <span class="span2"><%= g.updated_at %></span>
+    <span class="span1"><%= link_to 'delete', admin_gather_path(g), :method => :delete %></span>
+  </div>
+<% end %>
